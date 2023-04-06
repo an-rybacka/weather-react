@@ -1,6 +1,6 @@
-import "./styles.css";
+import "./Styles.css";
 import SearchEngine from "./SearchEngine";
-import "./App.css";
+
 
 export default function App() {
   return (

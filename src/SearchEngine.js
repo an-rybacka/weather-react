@@ -1,3 +1,4 @@
+import "./Styles.css"
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -33,28 +34,29 @@ export default function SearchEngine() {
   let form = (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
+        type="search"
         placeholder="Enter a city..."
-        autoFocus
+        className="form-control"
+        autoFocus="on"
         onChange={insertSearch}
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="Search" className="btn btn-primary" />
     </form>
   );
 
   if (loaded) {
     return (
-      <div>
+      <div className="col-6">
         {" "}
         {form}
         <ul>
-          <li>Temperature: {weather.temp}</li>
           <li>Description: {weather.description}</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/h</li>
           <li>
             <img src={weather.icon} alt={weather.description} />
           </li>
+          <li>Temperature: {weather.temp}</li>
         </ul>
       </div>
     );
